@@ -1,0 +1,36 @@
+evaluation:
+  testset_path: data/testset.json
+  num_questions: 200
+  metrics:
+    - recall_at_k
+    - ndcg
+    - mrr
+    - faithfulness
+    - answer_relevance
+    - answer_correctness
+    - latency_p50
+    - latency_p95
+
+  recall_k_values: [1, 3, 5, 10]
+
+  faithfulness:
+    judge_model: gpt-4o
+    batch_size: 10
+
+  baselines:
+    - name: naive_rag
+      top_k: 5
+      use_hyde: false
+      use_reranker: false
+    - name: dense_only
+      top_k: 5
+      use_hyde: true
+      use_reranker: false
+    - name: full_pipeline
+      top_k: 5
+      use_hyde: true
+      use_reranker: true
+
+  wandb:
+    project: production-rag-eval
+    tags: [evaluation, benchmark]

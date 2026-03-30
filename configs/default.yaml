@@ -1,0 +1,53 @@
+ingestion:
+  chunk_size: 512
+  chunk_overlap: 64
+  min_chunk_size: 100
+  drift_threshold: 0.4        # cosine distance threshold for topic-drift splits
+  metadata_fields:
+    - source
+    - title
+    - section
+    - date
+    - doc_id
+
+embeddings:
+  dense_model: text-embedding-3-large
+  dense_dimensions: 3072
+  sparse_model: bm25           # built locally from corpus
+  batch_size: 64
+
+retrieval:
+  top_k_dense: 50
+  top_k_sparse: 50
+  top_k_after_fusion: 50
+  top_k_after_rerank: 5
+  rrf_k: 60                   # RRF constant (higher = less top-heavy)
+
+reranker:
+  model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  batch_size: 32
+  max_length: 512
+
+query_transform:
+  use_hyde: true
+  use_decomposition: true
+  hyde_model: gpt-4o-mini     # cheaper model for HyDE generation
+  max_subqueries: 3
+
+generation:
+  model: gpt-4o
+  max_tokens: 1024
+  temperature: 0.1
+  max_context_tokens: 3000
+  citation_style: inline      # inline | footnote | none
+
+monitoring:
+  enable_wandb: true
+  enable_prometheus: true
+  prometheus_port: 9090
+  log_slow_queries_ms: 2000
+
+qdrant:
+  collection_name: rag_documents
+  distance: Cosine
+  on_disk_payload: true

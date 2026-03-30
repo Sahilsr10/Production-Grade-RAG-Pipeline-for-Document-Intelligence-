@@ -1,0 +1,14 @@
+[
+    {
+      "question": "What was Acme revenue in Q3 2024?",
+      "ground_truth": "Acme reported revenues of 4.2 billion in Q3 2024."
+    },
+    {
+      "question": "What was the growth percentage?",
+      "ground_truth": "The growth was 23 percent year-over-year."
+    },
+    {
+      "question": "Which division drove the growth?",
+      "ground_truth": "The cloud services division drove the growth."
+    }
+  ]
