@@ -1,9 +1,8 @@
-# Production-Grade-RAG-Pipeline-for-Document-Intelligence-
-
+🚀 Production-Grade RAG Pipeline for Document Intelligence
 
 An end-to-end Retrieval-Augmented Generation (RAG) system that enables intelligent question-answering over multi-format documents (PDF, TXT, JSON) using hybrid retrieval, reranking, and LLM-based generation.
 
-
+⸻
 
 ✨ Features
 	•	📄 Multi-format document ingestion (PDF, TXT, JSON)
@@ -18,7 +17,7 @@ An end-to-end Retrieval-Augmented Generation (RAG) system that enables intellige
 	•	🎨 Streamlit UI for interactive querying
 	•	🎯 Metadata-based document filtering
 
-
+⸻
 
 🏗️ System Architecture
 
@@ -39,7 +38,7 @@ LLM (Mistral via Ollama)
 Final Answer + Sources
 
 
-
+⸻
 
 ⚙️ Tech Stack
 	•	Language: Python
@@ -52,7 +51,7 @@ Final Answer + Sources
 	•	LLM: Mistral via Ollama
 	•	Infra: Docker
 
-
+⸻
 
 📂 Project Structure
 
@@ -79,7 +78,7 @@ production-rag/
 └── README.md
 
 
-
+⸻
 
 🚀 Getting Started
 
@@ -89,7 +88,7 @@ git clone https://github.com/your-username/production-rag.git
 cd production-rag
 
 
-
+⸻
 
 2. Setup Virtual Environment
 
@@ -98,14 +97,14 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 
-
+⸻
 
 3. Start Qdrant
 
 docker run -p 6333:6333 qdrant/qdrant
 
 
-
+⸻
 
 4. Start Ollama
 
@@ -113,35 +112,35 @@ ollama serve
 ollama pull mistral
 
 
-
+⸻
 
 5. Ingest Documents
 
 python scripts/ingest.py --source data/raw --collection test_docs
 
 
-
+⸻
 
 6. Run Backend API
 
 uvicorn src.api.main:app --reload
 
 
-
+⸻
 
 7. Launch UI
 
 streamlit run app.py
 
 
-
+⸻
 
 🧪 Example Queries
 	•	What topics are covered in Unit III?
 	•	Summarize key concepts from the uploaded document
 	•	Compare classification and regression techniques
 
-
+⸻
 
 📊 Evaluation
 
@@ -152,7 +151,7 @@ Metrics:
 	•	Answer relevance
 	•	Latency (p50, p95)
 
-
+⸻
 
 🧠 Key Highlights
 	•	Built a production-grade RAG pipeline from scratch
@@ -161,7 +160,7 @@ Metrics:
 	•	Enabled metadata-aware filtering for document-specific QA
 	•	Designed a fully local LLM system (no paid APIs)
 
-
+⸻
 
 📌 Future Improvements
 	•	Multi-user support
@@ -169,5 +168,5 @@ Metrics:
 	•	Vector compression for scalability
 	•	File upload directly in UI
 
-
+⸻
 
